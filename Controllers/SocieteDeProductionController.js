@@ -1,13 +1,13 @@
 import SocieteDeProduction from "../models/SocieteDeProduction.js";
-import Tournage from "../models/Tournage.js";
+import Produit from "../models/Produit.js";
 import { json } from "express";
 
 export function add (req, res) {
     SocieteDeProduction.create(req.body)
     .then(async newSocieteDeProduction => { 
     
-    await Tournage.findByIdAndUpdate({
-            _id: newSocieteDeProduction.Tournageid
+    await Produit.findByIdAndUpdate({
+            _id: newSocieteDeProduction.Produitid
         },
         {
             $push: {

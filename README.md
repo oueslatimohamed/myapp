@@ -7,7 +7,7 @@
 
 ## General info
 
-this is my app
+waaaaaaaaaaaaaaaaaaaaaaaaa chams el 3achiaaaaaaa
 
 ## Technologies
 Node JS ,
@@ -17,7 +17,7 @@ Express JS and MongoDB
 
 First You have to clone it
 ```
-$ git clone https://github.com/oueslatimohamed/myapp.git
+$ git clone https://github.com/oueslatimohamed/MyApp.git
 ```
 Then, to run this project, Type the code below to install it first:<br>
 You can use docker:

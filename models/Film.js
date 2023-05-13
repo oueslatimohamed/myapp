@@ -10,11 +10,6 @@ const filmSchema =  new Schema(
             type: String,
             required: true            
         },
-        Produitid :{
-            type: Schema.Types.ObjectId,
-            ref: 'Produit',
-            required: false
-        },
     },
     {
         timestamps: true

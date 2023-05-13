@@ -1,6 +1,4 @@
 import Tournage from "../models/Tournage.js";
-import Produit from "../models/Produit.js";
-import SocieteDeProduction from "../models/SocieteDeProduction.js";
 import { json } from "express";
 
 export function add (req, res) {

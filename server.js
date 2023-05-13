@@ -7,10 +7,10 @@ import swaggerUi from 'swagger-ui-express';
 
 dotenv.config()
 
-import FilmRoutes from './Routes/FilmRoute.js';
 import ProduitRoutes from './Routes/ProduitRoute.js';
-import SocieteDeProductionRoutes from './Routes/SocieteDeProductionRoute.js';
+import FilmRoutes from './Routes/FilmRoute.js';
 import TournageRoutes from './Routes/TournageRoute.js';
+import SocieteDeProductionRoutes from './Routes/SocieteDeProductionRoute.js';
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const swaggerDocument = require('./documentation.json')  
@@ -19,7 +19,7 @@ const swaggerDocument = require('./documentation.json')
 const app = express();
 const port = process.env.PORT || 9090;
 
-const databaseName = 'myapp';
+const databaseName = 'MyApp';
 
 mongoose.set('debug', true);
 mongoose.Promise = global.Promise;
@@ -45,10 +45,10 @@ app.use("/file",express.static('public/files'));
 app.set('view engine', 'ejs')
 
 
-app.use('/Film',FilmRoutes);
 app.use('/Produit',ProduitRoutes);
-app.use('/SocieteDeProduction',SocieteDeProductionRoutes);
+app.use('/Film',FilmRoutes);
 app.use('/Tournage',TournageRoutes);
+app.use('/SocieteDeProduction',SocieteDeProductionRoutes);
 
 
 app.listen(port, () => {

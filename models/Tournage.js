@@ -14,18 +14,6 @@ const tournageSchema =  new Schema(
             type: Date,
             required: true            
         },
-        Produits :[{
-            type: Schema.Types.ObjectId,
-            ref: 'Produit',
-            required: true
-            }],
-        
-        SocieteDeProductions :[{
-            type: Schema.Types.ObjectId,
-            ref: 'SocieteDeProduction',
-            required: true
-            }],
-        
     },
     {
         timestamps: true

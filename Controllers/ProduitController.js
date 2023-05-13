@@ -1,21 +1,11 @@
 import Produit from "../models/Produit.js";
-import Tournage from "../models/Tournage.js";
-import Film from "../models/Film.js";
+import SocieteDeProduction from "../models/SocieteDeProduction.js";
 import { json } from "express";
 
 export function add (req, res) {
     Produit.create(req.body)
     .then(async newProduit => { 
     
-    await Tournage.findByIdAndUpdate({
-            _id: newProduit.Tournageid
-        },
-        {
-            $push: {
-                Produits: newProduit._id,
-            },
-        }
-    )
     await newProduit.save();
         res.status(200).json(newProduit);
     })

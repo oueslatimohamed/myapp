@@ -6,9 +6,9 @@ const societedeproductionSchema =  new Schema(
             type: String,
             required: true            
         },
-        Tournageid :{
+        Produitid :{
             type: Schema.Types.ObjectId,
-            ref: 'Tournage',
+            ref: 'Produit',
             required: false
         },
     },

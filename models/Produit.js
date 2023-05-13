@@ -18,14 +18,9 @@ const produitSchema =  new Schema(
             type: Number,
             required: true            
         },
-        Tournageid :{
+        SocieteDeProductions :[{
             type: Schema.Types.ObjectId,
-            ref: 'Tournage',
-            required: false
-        },
-        Films :[{
-            type: Schema.Types.ObjectId,
-            ref: 'Film',
+            ref: 'SocieteDeProduction',
             required: true
             }],
         

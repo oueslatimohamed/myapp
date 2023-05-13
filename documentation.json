@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "myapp API",
-    "description": "API for myapp",
+    "title": "MyApp API",
+    "description": "API for MyApp",
     "version": "1.0"
   },
   "basePath": "/",
@@ -10,22 +10,6 @@
     "http"
   ],
   "definitions": {     
-        "Film":{
-        "type": "object",
-        "properties":{
-           "typeDeTournage" :{
-            "type": "string",
-            "required": true        
-        },           "titre" :{
-            "type": "string",
-            "required": true        
-        }
-        "Produitid" :{
-            "type": "string"
-        }
-        }
-        },                
-    
         "Produit":{
         "type": "object",
         "properties":{
@@ -42,21 +26,18 @@
             "type": "number",
             "required": true        
         }
-        "Tournageid" :{
-            "type": "string"
-        }
         }
         },                
     
-        "SocieteDeProduction":{
+        "Film":{
         "type": "object",
         "properties":{
-           "nom" :{
+           "typeDeTournage" :{
             "type": "string",
             "required": true        
-        }
-        "Tournageid" :{
-            "type": "string"
+        },           "titre" :{
+            "type": "string",
+            "required": true        
         }
         }
         },                
@@ -75,168 +56,22 @@
             "required": true        
         }
         }
+        },                
+    
+        "SocieteDeProduction":{
+        "type": "object",
+        "properties":{
+           "nom" :{
+            "type": "string",
+            "required": true        
+        }
+        "Produitid" :{
+            "type": "string"
+        }
+        }
         }                
    },
   "paths": {
-    "/Film/add": {
-      "post": {
-        "tags":["Film"], 
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Film",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Film"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Film added successfully"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }    
-    },
-    "/Film/getById/{id}": {
-      "get": {
-        "tags":["Film"],
-        "summary": "Get Film by its id",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-             "in": "path",
-            "name": "id",
-            "required": true,
-            "description": "The ID of the Film to retrieve",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Film found successfully"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }    
-    },
-    "/Film/getAll": {      
-      "get": {
-        "tags":["Film"],
-        "summary": "Get Film by its id",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Film found successfully"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }    
-    },
-    "/Film/update/{id}": {
-      "put": {
-        "tags":["Film"],
-        "summary": "Update Film",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-        {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "description": "The ID of the Film to update",
-            "type": "string"
-          },
-          {
-            "name": "Film",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Film"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Film added successfully"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }
-    },
-    "/Film/remove/{id}": {
-      "delete": {
-        "tags":["Film"],
-        "summary": "Delete Film by its id",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-             "in": "path",
-            "name": "id",
-            "required": true,
-            "description": "The ID of the Film to delete",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Film found successfully"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }    
-    },
     "/Produit/add": {
       "post": {
         "tags":["Produit"], 
@@ -396,9 +231,9 @@
         }
       }    
     },
-    "/SocieteDeProduction/add": {
+    "/Film/add": {
       "post": {
-        "tags":["SocieteDeProduction"], 
+        "tags":["Film"], 
         "consumes": [
           "application/json"
         ],
@@ -407,17 +242,17 @@
         ],
         "parameters": [
           {
-            "name": "SocieteDeProduction",
+            "name": "Film",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/SocieteDeProduction"
+              "$ref": "#/definitions/Film"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "SocieteDeProduction added successfully"
+            "description": "Film added successfully"
           },
           "400": {
             "description": "Invalid input"
@@ -428,10 +263,10 @@
         }
       }    
     },
-    "/SocieteDeProduction/getById/{id}": {
+    "/Film/getById/{id}": {
       "get": {
-        "tags":["SocieteDeProduction"],
-        "summary": "Get SocieteDeProduction by its id",
+        "tags":["Film"],
+        "summary": "Get Film by its id",
         "consumes": [
           "application/json"
         ],
@@ -443,13 +278,13 @@
              "in": "path",
             "name": "id",
             "required": true,
-            "description": "The ID of the SocieteDeProduction to retrieve",
+            "description": "The ID of the Film to retrieve",
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "SocieteDeProduction found successfully"
+            "description": "Film found successfully"
           },
           "400": {
             "description": "Invalid input"
@@ -460,10 +295,10 @@
         }
       }    
     },
-    "/SocieteDeProduction/getAll": {      
+    "/Film/getAll": {      
       "get": {
-        "tags":["SocieteDeProduction"],
-        "summary": "Get SocieteDeProduction by its id",
+        "tags":["Film"],
+        "summary": "Get Film by its id",
         "consumes": [
           "application/json"
         ],
@@ -472,7 +307,7 @@
         ],
         "responses": {
           "200": {
-            "description": "SocieteDeProduction found successfully"
+            "description": "Film found successfully"
           },
           "400": {
             "description": "Invalid input"
@@ -483,10 +318,10 @@
         }
       }    
     },
-    "/SocieteDeProduction/update/{id}": {
+    "/Film/update/{id}": {
       "put": {
-        "tags":["SocieteDeProduction"],
-        "summary": "Update SocieteDeProduction",
+        "tags":["Film"],
+        "summary": "Update Film",
         "consumes": [
           "application/json"
         ],
@@ -498,21 +333,21 @@
             "in": "path",
             "name": "id",
             "required": true,
-            "description": "The ID of the SocieteDeProduction to update",
+            "description": "The ID of the Film to update",
             "type": "string"
           },
           {
-            "name": "SocieteDeProduction",
+            "name": "Film",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/SocieteDeProduction"
+              "$ref": "#/definitions/Film"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "SocieteDeProduction added successfully"
+            "description": "Film added successfully"
           },
           "400": {
             "description": "Invalid input"
@@ -523,10 +358,10 @@
         }
       }
     },
-    "/SocieteDeProduction/remove/{id}": {
+    "/Film/remove/{id}": {
       "delete": {
-        "tags":["SocieteDeProduction"],
-        "summary": "Delete SocieteDeProduction by its id",
+        "tags":["Film"],
+        "summary": "Delete Film by its id",
         "consumes": [
           "application/json"
         ],
@@ -538,13 +373,13 @@
              "in": "path",
             "name": "id",
             "required": true,
-            "description": "The ID of the SocieteDeProduction to delete",
+            "description": "The ID of the Film to delete",
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "SocieteDeProduction found successfully"
+            "description": "Film found successfully"
           },
           "400": {
             "description": "Invalid input"
@@ -704,6 +539,165 @@
         "responses": {
           "200": {
             "description": "Tournage found successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }    
+    },
+    "/SocieteDeProduction/add": {
+      "post": {
+        "tags":["SocieteDeProduction"], 
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "SocieteDeProduction",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SocieteDeProduction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SocieteDeProduction added successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }    
+    },
+    "/SocieteDeProduction/getById/{id}": {
+      "get": {
+        "tags":["SocieteDeProduction"],
+        "summary": "Get SocieteDeProduction by its id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+             "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "The ID of the SocieteDeProduction to retrieve",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SocieteDeProduction found successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }    
+    },
+    "/SocieteDeProduction/getAll": {      
+      "get": {
+        "tags":["SocieteDeProduction"],
+        "summary": "Get SocieteDeProduction by its id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "SocieteDeProduction found successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }    
+    },
+    "/SocieteDeProduction/update/{id}": {
+      "put": {
+        "tags":["SocieteDeProduction"],
+        "summary": "Update SocieteDeProduction",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "The ID of the SocieteDeProduction to update",
+            "type": "string"
+          },
+          {
+            "name": "SocieteDeProduction",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SocieteDeProduction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SocieteDeProduction added successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/SocieteDeProduction/remove/{id}": {
+      "delete": {
+        "tags":["SocieteDeProduction"],
+        "summary": "Delete SocieteDeProduction by its id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+             "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "The ID of the SocieteDeProduction to delete",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SocieteDeProduction found successfully"
           },
           "400": {
             "description": "Invalid input"

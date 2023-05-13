@@ -1,20 +1,10 @@
 import Film from "../models/Film.js";
-import Produit from "../models/Produit.js";
 import { json } from "express";
 
 export function add (req, res) {
     Film.create(req.body)
     .then(async newFilm => { 
     
-    await Produit.findByIdAndUpdate({
-            _id: newFilm.Produitid
-        },
-        {
-            $push: {
-                Films: newFilm._id,
-            },
-        }
-    )
     await newFilm.save();
         res.status(200).json(newFilm);
     })
