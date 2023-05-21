@@ -13,7 +13,7 @@ import TournageRoutes from './Routes/TournageRoute.js';
 import SocieteDeProductionRoutes from './Routes/SocieteDeProductionRoute.js';
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-const swaggerDocument = require('./documentation.json')  
+//const swaggerDocument = require('./documentation.json')  
 
 
 const app = express();
