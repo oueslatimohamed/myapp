@@ -23,9 +23,7 @@ const databaseName = 'MyApp';
 
 mongoose.set('debug', true);
 mongoose.Promise = global.Promise;
-
-mongoose
-  .connect(`mongodb://127.0.0.1:27017/${databaseName}`)
+mongoose.connect(`mongodb+srv://oueslatimohamed01:azerty123@test.tzaqd7r.mongodb.net/${databaseName}?retryWrites=true&w=majority`)
  // .connect(`mongodb://mongo_db:27017/${databaseName}`)
   .then(() => {
     console.log(`Connected to ${databaseName}`);
