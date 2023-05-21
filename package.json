@@ -30,7 +30,6 @@
     "opt": "^0.1.14",
     "otp-generator": "^4.0.0",
     "request-promise": "^4.2.6",
-    "socket.io": "*",
     "swagger-jsdoc": "^6.2.5",
     "swagger-ui-express": "^4.6.0"
   }
